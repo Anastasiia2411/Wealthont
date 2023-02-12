@@ -72,7 +72,7 @@ export const AboutUsButtonWrapper = styled.div`
   justify-content: space-between;
   @media (max-width: 885px) {
     width: 100%;
-    justify-content: center;
+    justify-content: space-evenly;
   }
   @media (min-width: 886px) and (max-width: 1200px) {
    margin: 0 auto;
@@ -151,11 +151,12 @@ export const FirstMessage = styled.div`
   top: 33%;
   right: 7%;
   max-width: 340px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0,0,0,0.2);
   @media (max-width: 885px) {
     max-width: 340px;
     justify-content: center;
-    top: 18%;
-    right: 22%;
+    top: 16%;
+    right: 7%;
   }
 `;
 
@@ -166,6 +167,7 @@ export const SecondMessage = styled.div`
   position: absolute;
   right: -1%;
   max-width: 340px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0,0,0,0.2);
   @media (max-width: 885px) {
     max-width: 340px;
     justify-content: center;
@@ -181,6 +183,7 @@ export const ThirdMessage = styled.div`
   top: 65%;
   right: 2%;
   max-width: 340px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0,0,0,0.2);
   @media (max-width: 885px) {
     max-width: 340px;
     justify-content: center;

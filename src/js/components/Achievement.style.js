@@ -18,7 +18,7 @@ export const OurAchievementList = styled.ul`
     row-gap: 10px;
     margin-top: 60px;
   }
-  @media (min-width:414px) and  (max-width: 580px){
+  @media (min-width:380px) and  (max-width: 580px){
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     gap:20px;

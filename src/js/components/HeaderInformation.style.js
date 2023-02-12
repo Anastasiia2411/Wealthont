@@ -40,7 +40,7 @@ export const HeaderText = styled.h1`
   text-align: start;
   letter-spacing: 1.899px;
   color: #230B59;
-  @media (min-width:414px) and  (max-width: 580px){
+  @media (min-width:380px) and  (max-width: 580px){
    text-align: center;
   }
 `;

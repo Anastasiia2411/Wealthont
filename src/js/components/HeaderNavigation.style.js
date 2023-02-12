@@ -20,7 +20,7 @@ export const HeaderAdaptiveNavigation = styled.div`
   @media(min-width: 792px){
     display: none;
   }
-  @media (min-width:414px) and  (max-width: 580px){
+  @media (min-width:380px) and  (max-width: 580px){
    width: 35px;
     height: 35px;
     margin-right: 1vw;

@@ -14,7 +14,13 @@ export const OurReviewsSectionContentWrapper = styled.div`
   justify-content: space-around;
   flex-grow: 1;
   max-width: 1240px;
+  @media(min-width: 380px) and (max-width: 1019px){
+    max-width: 335px;
+    overflow: hidden;
+  };
 `;
+
+
 
 export const ReviewWrapper = styled.div`
   margin-top: 150px;
@@ -28,6 +34,14 @@ export const ReviewWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media(min-width: 1020px) and (max-width: 1200px){
+  
+    max-width: 300px;
+    height: 300px;
+  }
+  @media(min-width: 380px) and (max-width: 1019px){
+    min-width: 300px;
+  };
 `;
 
 export const ReviewCompanyHeader = styled.h4`
@@ -54,7 +68,12 @@ export const ReviewParagraph = styled.p`
 
   & > span {
     font-weight: 700;
-  }
+  };
+  
+  @media(min-width: 1000px) and (max-width: 1200px){
+    font-size: 24px;
+    line-height: 24px;
+  };
 `;
 
 export const CommentatorsNameParagraph = styled.p`

@@ -10,6 +10,21 @@ export const FooterContainer = styled.div`
   & > div {
     padding-left: 50px;
     padding-top: 64px;
+    @media (min-width: 570px) and (max-width: 839px) {
+      padding-top: 50px;
+      padding-left: 10vw;
+      align-self: start;
+    }
+    @media (max-width: 569px) {
+      align-self: start;
+      padding-left: 10vw;
+    }
+  }
+;
+
+  @media (max-width: 839px) {
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -41,5 +56,12 @@ export const FooterList = styled.ul`
         transition: 0.7s;
       }
     }
+  
+  };
+
+  @media (max-width: 670px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    width: 360px;
   }
 `;

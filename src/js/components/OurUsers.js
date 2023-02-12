@@ -1,13 +1,13 @@
 import React from "react";
 import windowImg from "../../img/windowImg.png";
 import { Button } from "./Buttons.style";
-import { OurUsersHeader, OurUsersParagraph, OurUsersList } from "./OurUsers.style";
+import { OurUsersHeader, OurUsersParagraph, OurUsersList, WindowImg, CnbcSvg } from "./OurUsers.style";
 
 export default function OurUsersSection() {
     return (
         <>
             <div>
-                <img src={windowImg} alt="Window img"/>
+                <WindowImg src={windowImg} alt="Window img"/>
                 <OurUsersHeader>Over 450,000 people are already using Wealthfront to earn more and worry
                     less</OurUsersHeader>
                 <Button propOfBtn="button-started">Get started</Button>
@@ -326,7 +326,7 @@ export default function OurUsersSection() {
                         </defs>
                     </svg>
                 </li>
-                <li>
+                <CnbcSvg>
                     <svg width="124" height="79" viewBox="0 0 124 79" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_1_591)">
                             <path
@@ -366,7 +366,7 @@ export default function OurUsersSection() {
                             </clipPath>
                         </defs>
                     </svg>
-                </li>
+                </CnbcSvg>
             </OurUsersList>
         </>
     );
