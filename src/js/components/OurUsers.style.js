@@ -52,7 +52,9 @@ export const OurUsersList = styled.ul`
   }
 `;
 export const WindowImg = styled.img`
-  width: 100vw;
+  @media (max-width: 684px) {
+    width: 100vw;
+  }
 `;
 
 export const CnbcSvg = styled.li`

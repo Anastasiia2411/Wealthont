@@ -12,20 +12,22 @@ export const HeaderAdaptiveNavigation = styled.div`
   flex-direction: column;
   align-items: center;
   align-self: center;
+
   & > div {
     width: 30px;
     height: 2px;
     background: #4840BB;
   }
-  @media(min-width: 792px){
+
+  @media (min-width: 792px) {
     display: none;
   }
-  @media (min-width:380px) and  (max-width: 580px){
-   width: 35px;
+  @media (min-width: 380px) and  (max-width: 580px) {
+    width: 35px;
     height: 35px;
     margin-right: 1vw;
     margin-left: 3vw;
-    &>div{
+    & > div {
       width: 20px;
       height: 1px;
     }
@@ -66,23 +68,24 @@ export const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
 export const HeaderElementContainer = styled.div`
   position: relative;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
   margin-top: 20px;
-  @media (max-width: 792px){
+  @media (max-width: 792px) {
     justify-content: space-between;
-    &>div{
+    & > div {
       display: flex;
       justify-content: space-around;
       width: 280px;
     }
   }
-  @media (min-width:414px) and  (max-width: 580px) {
-    &>div{
-     justify-content: end;
+  @media (min-width: 414px) and  (max-width: 580px) {
+    & > div {
+      justify-content: end;
       width: 280px;
     }
   }

@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import styled from "styled-components";
 import HeaderInformation from "./components/HeaderInformation";
 
 import { Container } from "./components/index.style";
@@ -19,7 +18,9 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
+    <>
     <App/>
+    </>
 );
 
 function App() {
