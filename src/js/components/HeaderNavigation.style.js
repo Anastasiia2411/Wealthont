@@ -49,16 +49,21 @@ export const HeaderNavigationUl = styled.ul`
     right: 10%;
     top: 32px;
     transform: translate(-50%, 0);
-    display: none;
+    display: ${props=>props.className === true ? "none": "block"};
     background: aliceblue;
     flex-direction: column;
-    height: 200px;
+    max-height: 210px;
     max-width: 170px;
     justify-content: space-around;
     border-radius: 6px;
     z-index: 2;
     & > li {
       padding: 12px 0;
+      transition: 0.6s;
+      &:hover{
+        transition: 0.6s;
+        background-color: lightblue;
+      }
     }
   }
 `;

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+
 export const Button = styled.a`
   color: ${props => props.className === "button-log-in" ? "#4840BB" : "#FFFFFF"};
   border: ${props => props.className === "button-log-in" ? "1px solid #4840BB" : "none"};

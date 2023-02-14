@@ -1,10 +1,12 @@
-import React from "react";
-import { HeaderNavigationLink, HeaderNavigationUl, HeaderAdaptiveNavigation } from "./HeaderNavigation.style";
+import React, { useState } from "react";
+import { HeaderNavigationLink, HeaderNavigationUl } from "./HeaderNavigation.style";
+import styled from "styled-components";
 
-export default function HeaderNavigation() {
+export default function HeaderNavigation(props) {
+    console.log(props.showValue)
     return (
         <>
-            <HeaderNavigationUl>
+            <HeaderNavigationUl className={props.showValue}>
                 <li>
                     <HeaderNavigationLink>
                         Invest
@@ -26,7 +28,6 @@ export default function HeaderNavigation() {
                     </HeaderNavigationLink>
                 </li>
             </HeaderNavigationUl>
-
         </>
     );
 }

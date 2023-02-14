@@ -1,8 +1,7 @@
 import SvgLogo from "./SvgLogo";
 import HeaderNavigation from "./HeaderNavigation";
 import { Button } from "./Buttons.style";
-import * as React from "react";
-import {useState} from "react";
+import React, { useState } from "react";
 import {
     ButtonContainer,
     HeaderAdaptiveNavigation,
@@ -10,20 +9,27 @@ import {
     HeaderNavigationUl
 } from "./HeaderNavigation.style";
 
-function adaptiveMenu(props) {
-    // console.log(HeaderNavigationUl);
-    const [value, setValue] = useState(props.showEl);
-    console.log(value);
-}
-
 export default function HeaderMenu() {
+    let [value, setValue] = useState(true);
+    function onClick() {
+        if (value === false) {
+          return setValue(true);
+
+        } else {
+           return setValue(false);
+        }
+    }
+    React.useEffect(() => {
+        console.log("component was create");
+    }, [value]);
+
     return (
         <>
             <HeaderElementContainer>
                 <SvgLogo fill={"#230B59"}/>
-                <HeaderNavigation/>
+                <HeaderNavigation showValue={value}/>
                 <div>
-                    <HeaderAdaptiveNavigation showEl="false" onClick={adaptiveMenu}>
+                    <HeaderAdaptiveNavigation onClick={onClick}>
                         <div></div>
                         <div></div>
                         <div></div>
