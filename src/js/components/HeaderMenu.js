@@ -1,7 +1,7 @@
 import SvgLogo from "./SvgLogo";
 import HeaderNavigation from "./HeaderNavigation";
 import { Button } from "./Buttons.style";
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import {
     ButtonContainer,
     HeaderAdaptiveNavigation,
@@ -10,32 +10,62 @@ import {
 } from "./HeaderNavigation.style";
 
 export default function HeaderMenu() {
-    let [value, setValue] = useState(true);
-    function onClick() {
-        if (value === false) {
-          return setValue(true);
+    const [value, setValue] = useState(false);
 
-        } else {
-           return setValue(false);
+    const menuRef = useRef();
+
+    useEffect(() => {
+        function handleResize() {
+            const windowInnerWidth = window.innerWidth;
+            if (windowInnerWidth > 791) {
+                setValue(true);
+            } else if (windowInnerWidth <= 791) {
+                setValue(false);
+            }
         }
+
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
+    useEffect(() => {
+        function handleClickOutside(e) {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                closeModal();
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.addEventListener("mousedown", handleClickOutside);
+        };
+    }, [menuRef]);
+
+    function openModal() {
+        setValue(true);
     }
-    React.useEffect(() => {
-        console.log("component was create");
-    }, [value]);
+
+    function closeModal() {
+        setValue(false);
+    }
 
     return (
         <>
-            <HeaderElementContainer>
+            <HeaderElementContainer ref={menuRef}>
                 <SvgLogo fill={"#230B59"}/>
-                <HeaderNavigation showValue={value}/>
+                {value === true ? <HeaderNavigation/> : null}
                 <div>
-                    <HeaderAdaptiveNavigation onClick={onClick}>
+                    <HeaderAdaptiveNavigation onClick={openModal}>
                         <div></div>
                         <div></div>
                         <div></div>
                     </HeaderAdaptiveNavigation>
                     <ButtonContainer>
-                        <Button propOfBtn="button-log-in">Log in</Button>
+                        <Button propOfBtn="button-log-in" onClick={closeModal}>Log in</Button>
                         <Button propOfBtn="button-started">Get started</Button>
                     </ButtonContainer>
                 </div>

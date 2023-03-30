@@ -3,10 +3,9 @@ import { HeaderNavigationLink, HeaderNavigationUl } from "./HeaderNavigation.sty
 import styled from "styled-components";
 
 export default function HeaderNavigation(props) {
-    console.log(props.showValue)
     return (
         <>
-            <HeaderNavigationUl className={props.showValue}>
+            <HeaderNavigationUl>
                 <li>
                     <HeaderNavigationLink>
                         Invest

@@ -152,11 +152,18 @@ export const FirstMessage = styled.div`
   right: 7%;
   max-width: 340px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0,0,0,0.2);
-  @media (max-width: 885px) {
+
+  @media only screen and (min-width: 560px) and (max-width: 885px) {
+    max-width: 340px;
+    justify-content: center;
+    top: 17%;
+    right: 22%;
+  };
+  @media (max-width: 559px) {
     max-width: 340px;
     justify-content: center;
     top: 16%;
-    right: 7%;
+    right: 13%;
   }
 `;
 

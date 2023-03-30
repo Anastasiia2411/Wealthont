@@ -44,12 +44,11 @@ export const HeaderNavigationUl = styled.ul`
   font-size: 16px;
   line-height: 27px;
   padding-left: 0;
-  @media (max-width: 792px) {
+  @media (max-width: 791px) {
     position: absolute;
     right: 10%;
     top: 32px;
     transform: translate(-50%, 0);
-    display: ${props=>props.className === true ? "none": "block"};
     background: aliceblue;
     flex-direction: column;
     max-height: 210px;
