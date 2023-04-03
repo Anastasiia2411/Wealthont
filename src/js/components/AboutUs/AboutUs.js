@@ -1,6 +1,6 @@
-import telephone from "../../img/telephone-img.png";
+import telephone from "../../../img/telephone-img.png";
 import React from "react";
-import { Button } from "./Buttons.style";
+import { Button } from "../Global/Buttons.style";
 import {
     AboutUsButtonWrapper,
     AboutUsDiv,
@@ -13,9 +13,12 @@ import {
     TechnologiesWrapper,
     Telephone, ThirdMessage
 } from "./AboutUs.style";
+import { ScrollAnimationStyled } from "../Animation/ScrollAnimation.style";
+
 
 export default function AboutUs() {
     return (
+        <ScrollAnimationStyled>
         <AboutUsDiv>
             <AboutUsTextWrapper sideProperty="right">
                 <AboutUsTextWrapperHeader>
@@ -100,5 +103,6 @@ export default function AboutUs() {
                 </div>
             </TechnologiesWrapper>
         </AboutUsDiv>
+            </ScrollAnimationStyled>
     );
 }

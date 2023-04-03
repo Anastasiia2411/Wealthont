@@ -1,9 +1,11 @@
 import React from "react";
-import  OurAchievementImg  from "../../img/our-achievement-img.png";
+import  OurAchievementImg  from "../../../img/our-achievement-img.png";
 import { SavingAndInvestingDiv,  SavingAndInvestingTextWrapper, SavingAndInvestingHeader, SavingAndInvestingParagraph, OurAchievementImgTag } from "./SavingAndInvesting.style";
+import { ScrollAnimationStyled } from "../Animation/ScrollAnimation.style";
 
 export default function SavingAndInvesting(){
     return(
+        <ScrollAnimationStyled>
         <SavingAndInvestingDiv>
             <div>
             <SavingAndInvestingTextWrapper>
@@ -13,5 +15,7 @@ export default function SavingAndInvesting(){
             <OurAchievementImgTag src={OurAchievementImg} alt=""/>
             </div>
         </SavingAndInvestingDiv>
+            </ScrollAnimationStyled>
+
     )
 }

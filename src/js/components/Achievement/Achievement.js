@@ -1,5 +1,5 @@
-import nerdwallet from "../../img/nerdwallet.png";
-import investopedia from "../../img/investopedia.png";
+import nerdwallet from "../../../img/nerdwallet.png";
+import investopedia from "../../../img/investopedia.png";
 import React from "react";
 import {
     NerdwalletImg,

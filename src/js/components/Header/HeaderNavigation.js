@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { HeaderNavigationLink, HeaderNavigationUl } from "./HeaderNavigation.style";
-import styled from "styled-components";
 
-export default function HeaderNavigation(props) {
+
+export default function HeaderNavigation() {
     return (
-        <>
             <HeaderNavigationUl>
                 <li>
                     <HeaderNavigationLink>
@@ -27,6 +26,5 @@ export default function HeaderNavigation(props) {
                     </HeaderNavigationLink>
                 </li>
             </HeaderNavigationUl>
-        </>
     );
 }

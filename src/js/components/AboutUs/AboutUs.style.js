@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+
+
 export const AboutUsDiv = styled.div`
   display: flex;
   margin-top: 100px;

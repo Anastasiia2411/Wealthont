@@ -1,6 +1,6 @@
 import React from "react";
-import windowImg from "../../img/windowImg.png";
-import { Button } from "./Buttons.style";
+import windowImg from "../../../img/windowImg.png";
+import { Button } from "../Global/Buttons.style";
 import { OurUsersHeader, OurUsersParagraph, OurUsersList, WindowImg, CnbcSvg } from "./OurUsers.style";
 
 export default function OurUsersSection() {

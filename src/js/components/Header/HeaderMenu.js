@@ -1,6 +1,6 @@
 import SvgLogo from "./SvgLogo";
 import HeaderNavigation from "./HeaderNavigation";
-import { Button } from "./Buttons.style";
+import { Button } from "../Global/Buttons.style";
 import React, { useEffect, useState, useRef } from "react";
 import {
     ButtonContainer,
@@ -8,9 +8,14 @@ import {
     HeaderElementContainer,
     HeaderNavigationUl
 } from "./HeaderNavigation.style";
+import { ScrollAnimationStyled } from "../Animation/ScrollAnimation.style";
 
 export default function HeaderMenu() {
     const [value, setValue] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [menuBigSize, setMenuBigSize] = useState(true)
+
+
 
     const menuRef = useRef();
 
@@ -19,8 +24,10 @@ export default function HeaderMenu() {
             const windowInnerWidth = window.innerWidth;
             if (windowInnerWidth > 791) {
                 setValue(true);
+                setMenuBigSize(true)
             } else if (windowInnerWidth <= 791) {
                 setValue(false);
+                setMenuBigSize(false)
             }
         }
 
@@ -33,7 +40,7 @@ export default function HeaderMenu() {
 
     useEffect(() => {
         function handleClickOutside(e) {
-            if (menuRef.current && !menuRef.current.contains(event.target)) {
+            if (menuRef.current && !menuRef.current.contains(e.target)) {
                 closeModal();
             }
         }
@@ -47,19 +54,24 @@ export default function HeaderMenu() {
 
     function openModal() {
         setValue(true);
+        setIsMenuOpen(true)
+        if(value===true){
+            closeModal()
+        }
     }
-
     function closeModal() {
+        setIsMenuOpen(false)
         setValue(false);
     }
 
     return (
         <>
+        <ScrollAnimationStyled>
             <HeaderElementContainer ref={menuRef}>
                 <SvgLogo fill={"#230B59"}/>
-                {value === true ? <HeaderNavigation/> : null}
+                {menuBigSize ?  <HeaderNavigation/> : null}
                 <div>
-                    <HeaderAdaptiveNavigation onClick={openModal}>
+                    <HeaderAdaptiveNavigation isOpen={isMenuOpen}  onClick={openModal}>
                         <div></div>
                         <div></div>
                         <div></div>
@@ -70,6 +82,9 @@ export default function HeaderMenu() {
                     </ButtonContainer>
                 </div>
             </HeaderElementContainer>
+
+        </ScrollAnimationStyled>
+         {value === true && !menuBigSize? <HeaderNavigation/> : null}
         </>
     );
 }

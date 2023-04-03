@@ -9,5 +9,6 @@ export default function ReviewElement(props){
         <ReviewParagraph>{props.propsText}</ReviewParagraph>
             </div>
         <CommentatorsNameParagraph>{props.propsCommentatorName}</CommentatorsNameParagraph>
-    </ReviewWrapper>)
+    </ReviewWrapper>
+    )
 }

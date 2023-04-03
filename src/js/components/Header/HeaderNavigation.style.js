@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 export const HeaderAdaptiveNavigation = styled.div`
   width: 45px;
@@ -12,17 +12,52 @@ export const HeaderAdaptiveNavigation = styled.div`
   flex-direction: column;
   align-items: center;
   align-self: center;
+  z-index: 3;
+  position: relative;
+  ${({ isOpen }) => isOpen && css`
+    @media (min-width: 380px) and  (max-width: 570px){
+      position: relative;
+      div:nth-child(1) {
+        transform: translateY(9px) rotate(50deg);
+      }
+
+      div:nth-child(2) {
+        opacity: 0;
+      }
+
+      div:nth-child(3) {
+        transform: translateY(-9px) rotate(-50deg);
+      }
+    }
+    @media (min-width: 570px) and  (max-width: 792px){
+      div:nth-child(1) {
+        transform: translateY(12px) rotate(50deg);
+      }
+
+      div:nth-child(2) {
+        opacity: 0;
+      }
+
+      div:nth-child(3) {
+        transform: translateY(-12px) rotate(-50deg);
+      }
+    }
+  
+  `}
 
   & > div {
     width: 30px;
     height: 2px;
     background: #4840BB;
+    transition: all 0.3s ease-in-out;
   }
 
   @media (min-width: 792px) {
+    position: relative;
     display: none;
   }
   @media (min-width: 380px) and  (max-width: 580px) {
+    position: relative;
     width: 35px;
     height: 35px;
     margin-right: 1vw;
@@ -46,9 +81,9 @@ export const HeaderNavigationUl = styled.ul`
   padding-left: 0;
   @media (max-width: 791px) {
     position: absolute;
-    right: 10%;
-    top: 32px;
-    transform: translate(-50%, 0);
+    left: 50%;
+    top: calc(0% + 55px);
+    transform: translateX(-50%);
     background: aliceblue;
     flex-direction: column;
     max-height: 210px;
@@ -59,7 +94,7 @@ export const HeaderNavigationUl = styled.ul`
     & > li {
       padding: 12px 0;
       transition: 0.6s;
-      &:hover{
+      &:hover {
         transition: 0.6s;
         background-color: lightblue;
       }
@@ -74,7 +109,6 @@ export const ButtonContainer = styled.div`
 `;
 
 export const HeaderElementContainer = styled.div`
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
